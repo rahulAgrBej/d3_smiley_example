@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BackgroundCircle } from './BackgroundCircle';
-import { Eyes } from './Eyes'
-import { Mouth } from './Mouth'
-import { FaceContainer } from './FaceContainer'
+import { Face } from './Face'
 
 const width = 960;
 const height = 500;
@@ -13,19 +10,22 @@ const strokeWidth = 10;
 const eyeOffsetX = 90;
 const eyeOffsetY = 100;
 const eyeRadius = 50;
-
 const mouthWidth = 20;
 const mouthRadius = 180;
 
 const App = () => (
-  
-  <FaceContainer width={width} height={height} centerX={centerX} centerY={centerY}>
-      <BackgroundCircle radius={centerY - strokeWidth / 2} strokeWidth={strokeWidth}/>
-      <Eyes eyeOffsetX={eyeOffsetX} eyeOffsetY={eyeOffsetY} eyeRadius={eyeRadius}/>
-      <Mouth mouthWidth={mouthWidth} mouthRadius={mouthRadius}/>
-  </FaceContainer>
-
-
+  <Face
+  width={width}
+  height={height}
+  centerX={width / 2}
+  centerY={height / 2}
+  strokeWidth={10}
+  eyeOffsetX={90}
+  eyeOffsetY={100}
+  eyeRadius={50}
+  mouthWidth={20}
+  mouthRadius={180}
+  />  
 );
 
 const rootElement = document.getElementById('root');

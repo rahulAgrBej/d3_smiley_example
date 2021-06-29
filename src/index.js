@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BackgroundCircle } from './BackgroundCircle';
 import { Eyes } from './Eyes'
 import { Mouth } from './Mouth'
+import { FaceContainer } from './FaceContainer'
 
 const width = 960;
 const height = 500;
@@ -17,16 +18,14 @@ const mouthWidth = 20;
 const mouthRadius = 180;
 
 const App = () => (
-  <svg width={width} height={height}>
-    {/* this is a group element, everything here moves together} */}
-    <g transform={`translate(${centerX}, ${centerY})`}> 
+  
+  <FaceContainer width={width} height={height} centerX={centerX} centerY={centerY}>
       <BackgroundCircle radius={centerY - strokeWidth / 2} strokeWidth={strokeWidth}/>
       <Eyes eyeOffsetX={eyeOffsetX} eyeOffsetY={eyeOffsetY} eyeRadius={eyeRadius}/>
-      
       <Mouth mouthWidth={mouthWidth} mouthRadius={mouthRadius}/>
-    </g>
-    
-  </svg>
+  </FaceContainer>
+
+
 );
 
 const rootElement = document.getElementById('root');

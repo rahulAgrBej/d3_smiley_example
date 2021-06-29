@@ -1,31 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { range } from 'd3';
 import { Face } from './Face'
 
-const width = 960;
-const height = 500;
-const centerX = width / 2;
-const centerY = height / 2;
-const strokeWidth = 10;
-const eyeOffsetX = 90;
-const eyeOffsetY = 100;
-const eyeRadius = 50;
-const mouthWidth = 20;
-const mouthRadius = 180;
+const width = 160;
+const height = 160;
+
+const faceArray = range(5 * 3);
 
 const App = () => (
-  <Face
-  width={width}
-  height={height}
-  centerX={width / 2}
-  centerY={height / 2}
-  strokeWidth={10}
-  eyeOffsetX={90}
-  eyeOffsetY={100}
-  eyeRadius={50}
-  mouthWidth={20}
-  mouthRadius={180}
-  />  
+    faceArray.map(() => (
+      <Face
+        width={width}
+        height={height}
+        centerX={width / 2}
+        centerY={height / 2}
+        strokeWidth={10}
+        eyeOffsetX={30}
+        eyeOffsetY={30}
+        eyeRadius={10 + Math.random() * 10}
+        mouthWidth={10 + Math.random() * 10}
+        mouthRadius={40}
+      /> 
+    ))
 );
 
 const rootElement = document.getElementById('root');
